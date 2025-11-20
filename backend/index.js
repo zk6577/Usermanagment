@@ -11,8 +11,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());    
 app.use(express.urlencoded({ extended: true }));
 app.use(
-    cors({
-        origin: "https://usermanagment-1.onrender.com",
+  cors({
+    origin: [
+      "https://usermanagment-1.onrender.com",
+      "http://localhost:5173"
+    ],
                 methods: ["GET", "POST", "PUT", "DELETE"],
         credentials:true
     })
@@ -20,9 +23,9 @@ app.use(
  app.use("/user", userrouter);
 
 
-
+   connectDb();
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    connectDb();
+ 
 
 });
