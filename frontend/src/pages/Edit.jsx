@@ -113,7 +113,7 @@ function Edit() {
 
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(`http://localhost:3000/user/${id}`);
+      const res = await axios.get(`https://usermanagment-xzd9.onrender.com/user/${id}`);
       setFormData(res.data);
     };
     getUser();
@@ -122,7 +122,7 @@ function Edit() {
   const updateHandler = async (e)=>{
     e.preventDefault();  
     try {
-      const result= await axios.put(`http://localhost:3000/user/update/${id}`,formData,{withCredentials:true});
+      const result= await axios.put(`https://usermanagment-xzd9.onrender.com/user/update/${id}`,formData,{withCredentials:true});
       setFormData(result.data);
       navigate("/")
     } catch (error) {

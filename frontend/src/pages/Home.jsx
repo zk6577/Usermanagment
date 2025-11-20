@@ -10,7 +10,7 @@ function Home() {
 
   const getalldata= async()=>{
     try {
-      const result = await axios.get("http://localhost:3000/user/all",{
+      const result = await axios.get("https://usermanagment-xzd9.onrender.com/user/all",{
         withCredentials:true,});
       const data=result.data;
       setData(data);
@@ -21,7 +21,7 @@ function Home() {
 
   const deleteHandler= async(id)=>{
     try {
-      await axios.delete(`http://localhost:3000/user/delete/${id}`,{withCredentials:true});
+      await axios.delete(`https://usermanagment-xzd9.onrender.com/user/delete/${id}`,{withCredentials:true});
       getalldata();
     } catch (error) {
       console.log("Error in deleting user", error);

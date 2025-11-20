@@ -88,7 +88,7 @@ function Add() {
   const addHandler= async(e)=>{
     e.preventDefault();
     try{
-      const result = await axios.post("http://localhost:3000/user/add",formData,{withCredentials:true});
+      const result = await axios.post("https://usermanagment-xzd9.onrender.com/user/add",formData,{withCredentials:true});
       setFormData({
         name:"",
         email:"",
