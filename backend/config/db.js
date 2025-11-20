@@ -7,7 +7,10 @@ import mongoose from "mongoose";
 
 export const connectDb= async()=>{
     try{
-        await mongoose.connect("mongodb+srv://khanariz541_db_user:7e8aQbMUDhSjt2Qe@cluster0.fguotqj.mongodb.net/userdata");
+        await mongoose.connect(process.env.MONGO_URL,{
+            useNewUrlParser:true,
+            useUnifiedTopology:true,
+        });
         console.log("Database connected successfully");
        
     }catch(err){
